@@ -5,6 +5,12 @@
       ./hardware-configuration.nix
   ];
 
+  # Make ready for nix flackes
+  nix.package = pkgs.nixFlakes;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;

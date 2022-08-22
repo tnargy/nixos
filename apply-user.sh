@@ -1,4 +1,5 @@
 #!/bin/sh
 pushd ~/nixos
-home-manager switch -f ./user/home.nix
+nix build .#homeManagerConfiguratins.onyx.activationPackage
+./result/activate
 popd

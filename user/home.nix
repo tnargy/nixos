@@ -24,9 +24,9 @@
     blender
     gimp
     godot
-    qutebrowser
     neovim
     pinentry_qt
+    qutebrowser
   ];
 
   imports = [
