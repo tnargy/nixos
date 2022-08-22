@@ -26,12 +26,22 @@
     godot
     qutebrowser
     neovim
+    pinentry_qt
   ];
 
   imports = [
     ./alacritty.nix
     ./tmux.nix
   ];
+
+  programs.gpg = {
+    enable = true;
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "qt";
+  };
 
   programs.git = {
     enable = true;
