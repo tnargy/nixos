@@ -1,5 +1,5 @@
 #!/bin/sh
 pushd ~/nixos
-nix build .#homeManagerConfiguratins.onyx.activationPackage
+nix build .#homeManagerConfigurations.onyx.activationPackage
 ./result/activate
 popd

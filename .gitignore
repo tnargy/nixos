@@ -1,2 +1,5 @@
+!*.secret
 result
-*.lock
+tmp
+*~
+*.qcow
