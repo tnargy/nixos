@@ -15,8 +15,8 @@ let
         };
       };
 
-      #font = {
-      #  size = 8.0;
+      font = {
+        size = 10.0;
       #  normal = {
       #    family = "Hack";
       #    style = "Regular";
@@ -33,7 +33,7 @@ let
       #    family = "Hack";
       #    style = "Bold Italic";
       #  };
-      #};
+      };
 
       # Colors (One Darker)
       colors = {
