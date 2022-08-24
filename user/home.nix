@@ -19,6 +19,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  home.sessionVariables = {
+    TERM = "alacritty";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   home.packages = with pkgs; [
     alacritty
     blender
@@ -33,6 +39,8 @@
     ./alacritty.nix
     ./tmux.nix
   ];
+
+  programs.bash.enable = true;
 
   programs.gpg = {
     enable = true;
