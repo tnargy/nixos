@@ -11,14 +11,8 @@
     experimental-features = nix-command flakes
   '';
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sda";
-
   system.stateVersion = "22.05";
 
-  networking.hostName = "nixos";
   networking.networkmanager.enable = true; 
 
   # Set your time zone.

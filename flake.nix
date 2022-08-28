@@ -20,10 +20,23 @@
 
   in {
     nixosConfigurations = {
+      surface = lib.nixosSystem {
+        inherit system;
+	modules = [
+	  ./system/laptop.nix
+	  home-manager.nixosModules.home-manager {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.onyx = {
+	      imports = [ ./user/home.nix ];
+	    };
+	  }
+	];
+      };
       nixos = lib.nixosSystem {
         inherit system;
 	modules = [
-	  ./system/configuration.nix
+	  ./system/desktop.nix
 	  home-manager.nixosModules.home-manager {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
