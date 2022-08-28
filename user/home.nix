@@ -27,10 +27,7 @@
 
   home.packages = with pkgs; [
     alacritty
-    blender
     gcc
-    gimp
-    godot
     neovim
     pinentry_qt
     qutebrowser
@@ -38,6 +35,7 @@
 
   imports = [
     ./alacritty.nix
+    # ./dev.nix
     ./tmux.nix
   ];
 
