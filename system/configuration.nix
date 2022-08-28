@@ -41,9 +41,14 @@
     git
     git-crypt
     gnupg
+    picom
     tmux
     vim
     wget
+  ];
+
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" ]; })
   ];
 
   # List services that you want to enable:
@@ -51,6 +56,7 @@
   services = {
     autorandr.enable = true;
     openssh.enable = true;
+    picom.enable = true;
 
     pipewire = {
       enable = true;

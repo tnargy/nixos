@@ -17,22 +17,22 @@ let
 
       font = {
         size = 10.0;
-      #  normal = {
-      #    family = "Hack";
-      #    style = "Regular";
-      #  };
-      #  bold = {
-      #    family = "Hack";
-      #    style = "Bold";
-      #  };
-      #  italic = {
-      #    family = "Hack";
-      #    style = "Italic";
-      #  };
-      #  bold_italic = {
-      #    family = "Hack";
-      #    style = "Bold Italic";
-      #  };
+        # normal = {
+        #   family = "FiraCode";
+        #   style = "Regular";
+        # };
+        # bold = {
+        #   family = "FiraCode";
+        #   style = "Bold";
+        # };
+        # italic = {
+        #   family = "FiraCode";
+        #   style = "Italic";
+        # };
+        # bold_italic = {
+        #   family = "FiraCode";
+        #   style = "Bold Italic";
+        # };
       };
 
       # Colors (One Darker)

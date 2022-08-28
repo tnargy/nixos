@@ -28,6 +28,7 @@
   home.packages = with pkgs; [
     alacritty
     blender
+    gcc
     gimp
     godot
     neovim
