@@ -1,3 +1,3 @@
 #!/bin/sh
 sudo nixos-rebuild switch --flake .#
-exec apply-user.sh
+./apply-user.sh
