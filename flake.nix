@@ -27,15 +27,15 @@
       surface = lib.nixosSystem {
         inherit system;
         modules = [ 
-          ./system/laptop/hardware-configuration.nix
-          ./system/laptop/default.nix
+          ./system/surface/hardware-configuration.nix
+          ./system/surface/default.nix
         ];
       };
       nixos = lib.nixosSystem {
         inherit system;
         modules = [ 
-          ./system/desktop/hardware-configuration.nix
-          ./system/desktop/default.nix
+          ./system/nixos/hardware-configuration.nix
+          ./system/nixos/default.nix
         ];
       };
     };
