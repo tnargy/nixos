@@ -21,16 +21,16 @@
   in {
     homeConfigurations.onyx = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules =  [ ./user/home.nix ]; 
+      modules =  [ ./user/onyx/home.nix ]; 
     };
     nixosConfigurations = {
       surface = lib.nixosSystem {
         inherit system;
-	      modules = [ ./system/laptop.nix ];
+	      modules = [ ./system/laptop/default.nix ];
       };
       nixos = lib.nixosSystem {
         inherit system;
-        modules = [ ./system/desktop.nix ];
+        modules = [ ./system/desktop/default.nix ];
       };
     };
   };
