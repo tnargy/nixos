@@ -19,32 +19,18 @@
     lib = nixpkgs.lib;
 
   in {
+    homeConfigurations.onyx = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules =  [ ./user/home.nix ]; 
+    };
     nixosConfigurations = {
       surface = lib.nixosSystem {
         inherit system;
-	modules = [
-	  ./system/laptop.nix
-	  home-manager.nixosModules.home-manager {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.onyx = {
-	      imports = [ ./user/home.nix ];
-	    };
-	  }
-	];
+	      modules = [ ./system/laptop.nix ];
       };
       nixos = lib.nixosSystem {
         inherit system;
-	modules = [
-	  ./system/desktop.nix
-	  home-manager.nixosModules.home-manager {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.onyx = {
-	      imports = [ ./user/home.nix ];
-	    };
-	  }
-	];
+        modules = [ ./system/desktop.nix ];
       };
     };
   };
