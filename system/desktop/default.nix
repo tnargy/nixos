@@ -3,7 +3,7 @@
 
 {
   imports = [
-      ../configuration.nix
+    ../configuration.nix
   ];
 
   # Use the GRUB 2 boot loader.

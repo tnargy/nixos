@@ -1,11 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, systemName, ... }:
 
 {
-  imports = [
-      ./hardware-configuration.nix
-  ];
-
-  # Make ready for nix flackes
   nix.package = pkgs.nixFlakes;
   nix.extraOptions = ''
     experimental-features = nix-command flakes

@@ -26,11 +26,17 @@
     nixosConfigurations = {
       surface = lib.nixosSystem {
         inherit system;
-	      modules = [ ./system/laptop/default.nix ];
+        modules = [ 
+          ./system/laptop/hardware-configuration.nix
+          ./system/laptop/default.nix
+        ];
       };
       nixos = lib.nixosSystem {
         inherit system;
-        modules = [ ./system/desktop/default.nix ];
+        modules = [ 
+          ./system/desktop/hardware-configuration.nix
+          ./system/desktop/default.nix
+        ];
       };
     };
   };
