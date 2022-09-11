@@ -27,14 +27,18 @@
 
   home.packages = with pkgs; [
     alacritty
+    bat
+    gcc
     neovim
     pinentry_qt
+    python3
     qutebrowser
+    ranger
+    ripgrep
   ];
 
   imports = [
     ./alacritty.nix
-    # ./dev.nix
     ./tmux.nix
   ];
 
