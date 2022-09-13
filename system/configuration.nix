@@ -46,7 +46,11 @@
   services = {
     autorandr.enable = true;
     openssh.enable = true;
-    picom.enable = true;
+    picom = {
+      enable = true;
+      inactive-opacity = 0.6;
+      blur-background = true;
+    };
 
     pipewire = {
       enable = true;

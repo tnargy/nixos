@@ -28,6 +28,7 @@
   home.packages = with pkgs; [
     alacritty
     bat
+    fossil
     gcc
     neovim
     pinentry_qt
@@ -35,6 +36,7 @@
     qutebrowser
     ranger
     ripgrep
+    starship
   ];
 
   imports = [
@@ -43,6 +45,7 @@
   ];
 
   programs.bash.enable = true;
+  programs.starship.enable = true;
 
   programs.gpg = {
     enable = true;
