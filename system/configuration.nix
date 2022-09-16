@@ -48,7 +48,7 @@
     openssh.enable = true;
     picom = {
       enable = true;
-      inactive-opacity = 0.6;
+      inactiveOpacity = 0.6;
     };
 
     pipewire = {
