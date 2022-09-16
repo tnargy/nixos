@@ -49,7 +49,6 @@
     picom = {
       enable = true;
       inactive-opacity = 0.6;
-      blur-background = true;
     };
 
     pipewire = {
