@@ -6,7 +6,7 @@ let
         "TERM" = "xterm-256color";
       };
 
-      opacity = 1.0;
+      opacity = 0.8;
 
       window = {
         padding = {
