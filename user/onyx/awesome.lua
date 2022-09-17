@@ -18,6 +18,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+--local volume = require("volume")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -205,6 +207,7 @@ awful.screen.connect_for_each_screen(function(s)
       s.mytasklist, -- Middle widget
       { -- Right widgets
 	  layout = wibox.layout.fixed.horizontal,
+    --volume_widget,
 	  mykeyboardlayout,
 	  wibox.widget.systray(),
 	  mytextclock,
@@ -247,6 +250,13 @@ globalkeys = gears.table.join(
   ),
   awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
 	    {description = "show main menu", group = "awesome"}),
+
+  awful.key({ }, "XF86AudioRaiseVolume", function ()
+      awful.util.spawn("amixer set Master 5%+") end),
+  awful.key({ }, "XF86AudioLowerVolume", function ()
+      awful.util.spawn("amixer set Master 5%-") end),
+  awful.key({ }, "XF86AudioMute", function ()
+      awful.util.spawn("amixer sset Master toggle") end),
 
   -- Layout manipulation
   awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
