@@ -29,6 +29,7 @@
   home.packages = with pkgs; [
     alacritty
     bat
+    discord
     fossil
     gcc
     neovim
@@ -37,6 +38,7 @@
     qutebrowser
     ranger
     ripgrep
+    spotify
     starship
   ];
 
