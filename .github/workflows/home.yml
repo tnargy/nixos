@@ -1,7 +1,17 @@
-name: "Test"
+name: Home
+
 on:
   pull_request:
   push:
+    branches:
+      - master
+    paths-ignore:
+      - '.git-crypt/**'
+      - '.gitattributes'
+      - '.gitignore'
+      - 'system/**'
+      - 'bin/**'
+
 jobs:
   build:
     runs-on: ubuntu-latest
