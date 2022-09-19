@@ -23,7 +23,7 @@
     TERM = "alacritty";
     EDITOR = "nvim";
     VISUAL = "nvim";
-    PATH = "$PATH:/home/onyx/nixos/bin";
+    PATH = "$PATH:/home/onyx/.nixos/bin";
   };
 
   home.packages = with pkgs; [

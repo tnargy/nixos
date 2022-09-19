@@ -155,7 +155,7 @@ local tasklist_buttons = gears.table.join(
 
 local function set_wallpaper(s)
   -- Wallpaper
-  gears.wallpaper.maximized("/home/onyx/nixos/wallpaper.jpg", s, true)
+  gears.wallpaper.maximized("/home/onyx/.nixos/wallpaper.jpg", s, true)
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
