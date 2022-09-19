@@ -11,6 +11,7 @@ on:
       - '.gitignore'
       - 'system/**'
       - 'bin/**'
+      - 'README.md'
 
 jobs:
   build:
