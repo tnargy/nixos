@@ -27,6 +27,7 @@
   # List packages installed in system profile. To search, run:
   environment.pathsToLink = [ "/libexec" ];
   environment.systemPackages = with pkgs; [
+    cachix
     dmenu
     git
     git-crypt
@@ -85,7 +86,7 @@
 
   # Open ports in the firewall.
   networking.firewall = {
-    enable = false;
+    enable = true;
     allowedTCPPorts = [ 22 ];
   };
 
