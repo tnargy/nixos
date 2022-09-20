@@ -1,6 +1,6 @@
 name: update 
 
-on: i
+on:
   workflow_dispatch: 
   schedule: 
     - cron: "0 3 * * SUN" 
