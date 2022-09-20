@@ -1,4 +1,4 @@
-name: update 
+name: Update 
 
 on:
   workflow_dispatch: 
@@ -9,14 +9,17 @@ jobs:
   flake_update:
     runs-on: ubuntu-latest
     steps:
-    - name: Clone repository
-      uses: actions/checkout@v3 
-    - name: Install nix
-      uses: ./.github/actions/install-nix
+    - uses: actions/checkout@v2.4.0
+    
+    - name: "Install Nix"
+      uses: cachix/install-nix-action@v16
+
     - name: Flake update
       run: nix flake update
-    - name: Run update script
-      run: nix run .#update
+
+        #- name: Run update script
+        #  run: nix run .#update
+
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
