@@ -10,7 +10,7 @@ on:
       - '.gitattributes'
       - '.gitignore'
       - 'user/**'
-        'system/surface/**'
+      - 'system/surface/**'
       - 'bin/**'
       - 'README.md'
 
