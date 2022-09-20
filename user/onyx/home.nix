@@ -32,6 +32,7 @@
     discord
     fossil
     gcc
+    jq
     neovim
     pinentry_qt
     python3
@@ -48,6 +49,7 @@
   ];
 
   programs.bash.enable = true;
+  programs.jq.enable = true;
   programs.starship.enable = true;
 
   programs.gpg = {
