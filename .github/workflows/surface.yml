@@ -10,7 +10,7 @@ on:
       - '.gitattributes'
       - '.gitignore'
       - 'user/**'
-        'system/nixos/**'
+      - 'system/nixos/**'
       - 'bin/**'
       - 'README.md'
 
