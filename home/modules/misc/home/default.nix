@@ -1,6 +1,5 @@
 {
-  nixpkgs-2105,
-  unstable,
+  nixpkgs,
   self,
   ...
 }: {
@@ -28,25 +27,17 @@ in {
       s = self';
     in [
       p.cachix
-      # nix-prefetch-scripts
       p.nix-review
       p.exercism
       p.tmate
       p.element-desktop
-      # p.powershell
-      s."dracula/konsole"
 
       p.fira-code
       p.cascadia-code
 
       p.lefthook
-
-      (p.writeShellScriptBin "timew" ''
-        export TIMEWARRIORDB="${config.home.homeDirectory}/timmelzer@gmail.com/timewarrior"
-        exec ${p.timewarrior}/bin/timew "$@"
-      '')
     ];
 
-    stateVersion = "20.09";
+    stateVersion = "22.05";
   };
 }

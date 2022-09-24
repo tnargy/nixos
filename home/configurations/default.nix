@@ -1,4 +1,4 @@
 {self, ...} @ inputs: {
-  "nmelzer@mimas" = self.lib.mkHome "nmelzer" "mimas" "x86_64-linux" inputs.unstable;
-  "nmelzer@enceladeus" = self.lib.mkHome "nmelzer" "enceladeus" "x86_64-linux" inputs.unstable;
+  "onyx@nixos" = self.lib.mkHome "onyx" "nixos" "x86_64-linux" inputs.nixpkgs
+  "onyx@surface" = self.lib.mkHome "onyx" "surface" "x86_64-linux" inputs.nixpkgs
 }
