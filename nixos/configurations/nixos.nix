@@ -1,20 +1,16 @@
-{ config, pkgs, systemName, ... }:
-
-{
-  nix.package = pkgs.nixFlakes;
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
-
-  nix.settings = {
-    extra-substituters = "https://tnargy.cachix.org";
-    extra-trusted-public-keys = "tnargy.cachix.org-1:mmQnR9w39W10ozUtbzGhksrUHTg8SY9vCiwWX8kO9w4=";
-  };
-
-  nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "22.05";
-
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+{nixpkgs, ...} @ inputs: {
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  upkgs = unstable.legacyPackages.x86_64-linux;
+in {
   networking.networkmanager.enable = true; 
+  networking.hostName = "nixos";
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -63,7 +59,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    
+
     xserver = {
       enable = true;
       layout = "us";
@@ -73,18 +69,18 @@
       };
 
       displayManager = {
-	sddm.enable = true;
+        sddm.enable = true;
         defaultSession = "none+awesome";
         autoLogin.enable = true;
-	autoLogin.user = "onyx";
+        autoLogin.user = "onyx";
       };
 
       windowManager.awesome = {
         enable = true;
-	luaModules = with pkgs.luaPackages; [ 
-	  luarocks # is the package manager for Lua modules 
-	  luadbi-mysql # Database abstraction layer 
-	];
+        luaModules = with pkgs.luaPackages; [ 
+          luarocks # is the package manager for Lua modules 
+          luadbi-mysql # Database abstraction layer 
+        ];
       };
     };
   };
@@ -95,7 +91,17 @@
     allowedTCPPorts = [ 22 ];
   };
 
-  system.autoUpgrade.enable = true;
+  security.sudo.extraRules = [
+    {
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/nixos-rebuild";
+          options = ["NOPASSWD"];
+        }
+      ];
+      groups = ["wheel"];
+    }
+  ];
 
+  system.stateVersion = "22.05"; # Did you read the comment?
 }
-
