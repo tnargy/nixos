@@ -7,7 +7,7 @@
   lib,
   ...
 }: let
-  upkgs = unstable.legacyPackages.x86_64-linux;
+  upkgs = nixpkgs.legacyPackages.x86_64-linux;
 in {
   networking.networkmanager.enable = true; 
   networking.hostName = "nixos";

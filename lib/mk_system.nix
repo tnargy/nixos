@@ -26,6 +26,6 @@ nixpkgs.lib.nixosSystem (
         bootloader
         hardware
       ]
-      ++ attrValues self.nixosModules
+      ++ attrValues self.nixosModules;
   }
 )

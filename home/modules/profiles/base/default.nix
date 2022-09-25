@@ -32,20 +32,10 @@ in {
       htop.enable = true;
       jq.enable = true;
       neovim.enable = true;
-      pinentry_qt.enable = true;
-      python3.enable = true;
-      qutebrowser.enable = true;
-      ranger.enable = true;
-      ripgrep.enable = true;
       starship.enable = true;
 
       gpg = {
         enable = true;
-      };
-
-      gpg-agent = {
-        enable = true;
-        pinentryFlavor = "qt";
       };
 
       git = {
@@ -59,14 +49,12 @@ in {
         compression = true;
       };
 
-      tmux = {
+    };
+    services = {
+      gpg-agent = {
         enable = true;
-
-        clock24 = true;
-        historyLimit = 10000;
-        terminal = "screen-256color";
+        pinentryFlavor = "qt";
       };
-
     };
   };
 }
