@@ -7,13 +7,11 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     statix.url = "github:nerdypepper/statix";
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     nix.url = "github:nixos/nix";
     master.url = "github:nixos/nixpkgs/master";
   };
 
   outputs = { self, ... } @ inputs : {
-    formatter.x86_64-linux = self.packages.x86_64-linux.alejandra;
     nixosModules = import ./nixos/modules inputs;
     nixosConfigurations = import ./nixos/configurations inputs;
 
@@ -28,13 +26,5 @@
     checks.x86_64-linux = import ./checks inputs;
 
     lib = import ./lib inputs;
-
-    devShell.x86_64-linux = self.devShells.x86_64-linux.default;
-    devShells.x86_64-linux.default = inputs.nixpkgs.legacyPackages.x86_64-linux.mkShell {
-      packages = builtins.attrValues {
-        inherit (self.packages.x86_64-linux) nil alejandra;
-        inherit (inputs.nixpkgs.legacyPackages.x86_64-linux) openssl pkg-config;
-      };
-    };
   };
 }

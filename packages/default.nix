@@ -13,6 +13,4 @@ in {
     inherit (inputs.nix.packages.x86_64-linux) nix;
     inherit (inputs.home-manager.packages.x86_64-linux) home-manager;
   };
-
-  "alejandra" = inputs.alejandra.defaultPackage.x86_64-linux;
 }
