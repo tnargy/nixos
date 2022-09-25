@@ -16,6 +16,5 @@ in
         entrypoint
         {home = {inherit username homeDirectory;};}
       ]
-      ++ attrValues self.homeModules
-      ++ attrValues self.mixedModules;
+      ++ attrValues self.homeModules;
   }

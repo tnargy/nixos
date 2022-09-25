@@ -27,7 +27,6 @@ in {
       bat.enable = true;
       direnv.enable = true;
       direnv.nix-direnv.enable = true;
-      discord.enable = true;
       exa.enable = true;
       home-manager.enable = true;
       htop.enable = true;
@@ -38,7 +37,6 @@ in {
       qutebrowser.enable = true;
       ranger.enable = true;
       ripgrep.enable = true;
-      spotify.enable = true;
       starship.enable = true;
 
       gpg = {

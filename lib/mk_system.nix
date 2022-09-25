@@ -21,14 +21,11 @@ nixpkgs.lib.nixosSystem (
             enable = true;
             generateCaches = true;
           };
-          services.nixos-vscode-server.enable = true;
         }
         entryPoint
         bootloader
         hardware
-        inputs.nixos-vscode-server.nixosModules.system
       ]
       ++ attrValues self.nixosModules
-      ++ attrValues self.mixedModules;
   }
 )
