@@ -28,14 +28,9 @@ in {
     in [
       p.cachix
       p.nix-review
-      p.exercism
-      p.tmate
-      p.element-desktop
 
       p.fira-code
       p.cascadia-code
-
-      p.lefthook
     ];
 
     stateVersion = "22.05";
