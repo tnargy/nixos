@@ -5,39 +5,26 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
+    statix.url = "github:nerdypepper/statix";
+    nix.url = "github:nixos/nix";
+    master.url = "github:nixos/nixpkgs/master";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
-  let
-    system = "x86_64-linux";
+  outputs = { self, ... } @ inputs : {
+    nixosModules = import ./nixos/modules inputs;
+    nixosConfigurations = import ./nixos/configurations inputs;
 
-    pkgs = import nixpkgs {
-      inherit system;
-      config = { allowUnfree = true; };
-    };
+    homeModules = import ./home/modules inputs;
+    homeConfigurations = import ./home/configurations inputs;
 
-    lib = nixpkgs.lib;
+    packages.x86_64-linux =
+      (import ./packages inputs)
+      // self.lib.nixosConfigurationsAsPackages.x86_64-linux
+      // self.lib.homeConfigurationsAsPackages.x86_64-linux;
 
-  in {
-    homeConfigurations.onyx = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules =  [ ./user/onyx/home.nix ]; 
-    };
-    nixosConfigurations = {
-      surface = lib.nixosSystem {
-        inherit system;
-        modules = [ 
-          ./system/surface/hardware-configuration.nix
-          ./system/surface/default.nix
-        ];
-      };
-      nixos = lib.nixosSystem {
-        inherit system;
-        modules = [ 
-          ./system/nixos/hardware-configuration.nix
-          ./system/nixos/default.nix
-        ];
-      };
-    };
+    # checks.x86_64-linux = import ./checks inputs;
+
+    lib = import ./lib inputs;
   };
 }
