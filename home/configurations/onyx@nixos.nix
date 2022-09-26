@@ -17,7 +17,6 @@
     };
 
     xsession.windowManager.awesome.autostart = [
-      "${pkgs.blueman}/bin/blueman-applet"
       "${pkgs.networkmanagerapplet}/bin/nm-applet"
     ];
   };
