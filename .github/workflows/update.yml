@@ -133,7 +133,7 @@ jobs:
   push_update:
     runs-on: ubuntu-latest
     permissions: write-all
-    needs: [update_flake, build_flake, build_checks, check_flake]
+    needs: [update_flake, build_flake, check_flake]
     steps:
     - name: Clone repository
       uses: actions/checkout@v3
@@ -154,7 +154,7 @@ jobs:
         git push -u origin updates-${{ github.run_id }}
         PR=$(gh pr create \
           --assignee tnargy \
-          --base main \
+          --base master \
           --body "Automatic flake update on $(date -I)" \
           --fill \
           --label bot \
