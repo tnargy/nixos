@@ -16,9 +16,4 @@ in {
       config.google-chrome.enableWideVine = true;
     })
     .google-chrome;
-
-  "switcher" = upkgs.callPackage ./switcher {
-    inherit (inputs.nix.packages.x86_64-linux) nix;
-    inherit (inputs.home-manager.packages.x86_64-linux) home-manager;
-  };
 }
