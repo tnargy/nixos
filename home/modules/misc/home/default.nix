@@ -27,7 +27,7 @@ in {
       s = self';
     in [
       p.cachix
-      p.nix-review
+      p.nixpkgs-review
 
       p.fira-code
       p.cascadia-code
