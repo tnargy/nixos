@@ -235,7 +235,7 @@ in {
       local function set_wallpaper(s)
          -- Wallpaper
          if beautiful.wallpaper then
-            local wallpaper = "~/.nixos/wallpaper.jpg" #beautiful.wallpaper
+            local wallpaper = "/home/onyx/.nixos/wallpaper.jpg"
             -- If wallpaper is a function, call it with the screen
             if type(wallpaper) == "function" then
                wallpaper = wallpaper(s)
