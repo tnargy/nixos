@@ -5,8 +5,6 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
-    statix.url = "github:nerdypepper/statix";
     nix.url = "github:nixos/nix";
     master.url = "github:nixos/nixpkgs/master";
   };
