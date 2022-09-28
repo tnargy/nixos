@@ -74,6 +74,11 @@ in {
       default = "${pkgs.alacritty}/bin/alacritty";
     };
 
+    chrome  = lib.mkOption {
+      type = lib.types.str;
+      default = "${pkgs.google-chrome}/bin/google-chrome-stable";
+    };
+
     launcher = lib.mkOption {
       type = lib.types.str;
       default = "${rofi}/bin/rofi -modi drun#run#window#ssh#emoji#unicode:${self'."rofi/unicode"}/bin/rofiunicode.sh -show drun -show-icons";
@@ -113,6 +118,7 @@ in {
       local modkey     = "Mod1"
       local theme_path = gears.filesystem.get_themes_dir() .. "default/theme.lua"
       local terminal   = "${cfg.terminalEmulator}" -- sets the default terminal
+      local chrome   = "${cfg.chrome}" -- sets the default browser
       local editor     = os.getenv("EDITOR") or "nvim" -- sets the default editor
       local editor_cmd = terminal .. " -e " .. editor -- sets the default command that is used to start the editor
 
@@ -169,7 +175,8 @@ in {
       mymainmenu = awful.menu({
             items = {
                { "awesome", myawesomemenu, beautiful.awesome_icon },
-               { "open terminal", terminal }
+               { "open terminal", terminal },
+               { "open browser", chrome }
             }
       })
 
@@ -357,8 +364,8 @@ in {
          -- Standard program
          awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
             {description = "open a terminal", group = "launcher"}),
-         awful.key({ modkey,           }, "b", function () awful.spawn(google-chrome-stable) end,
-            {description = "open Chrome", group = "launcher"}),
+         awful.key({ modkey,           }, "b", function () awful.spawn(chrome) end,
+            {description = "open browser", group = "launcher"}),
          awful.key({ modkey, "Control" }, "r", awesome.restart,
             {description = "reload awesome", group = "awesome"}),
          awful.key({ modkey, "Shift"   }, "q", awesome.quit,
