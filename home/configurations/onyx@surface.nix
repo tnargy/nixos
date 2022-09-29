@@ -4,9 +4,9 @@
   ...
 }: {pkgs, ...}: {
   config = {
-    nixpkgs.allowedUnfree = ["google-chrome"];
+    nixpkgs.allowedUnfree = ["discord" "google-chrome" "spotify-unwrapped"];
 
-    activeProfiles = ["browsing"];
+    activeProfiles = ["browsing" "laptop"];
 
     dconf.enable = true;
 
