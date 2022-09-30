@@ -19,5 +19,10 @@
     xsession.windowManager.awesome.autostart = [
       "${pkgs.networkmanagerapplet}/bin/nm-applet"
     ];
+
+    services = {
+      playerctld.enable = true;
+    };
+
   };
 }
