@@ -75,6 +75,12 @@ in {
         autoLogin.user = "onyx";
       };
 
+      libinput = {
+      	enable = true;
+	mouse.accelProfile = "flat";
+	touchpad.accelProfile = "flat";
+      };
+
       windowManager.awesome = {
         enable = true;
         luaModules = with pkgs.luaPackages; [ 
