@@ -12,6 +12,8 @@
 
   self' = self.packages.x86_64-linux;
 
+  battery-widget = "require(\"battery-widget\") {ac_prefix=\"🔌\", battery_prefix=\"🔋\"}";
+
   mediaKeys = let
     keyMap = {
       "XF86AudioMute" = "amixer set Master 1+ toggle";
@@ -103,13 +105,9 @@ in {
       local naughty        = require("naughty")
       local menubar        = require("menubar")
       local hotkeys_popup  = require("awful.hotkeys_popup").widget
-      -- local volume_control = require("volume-control")
       -- }}}
 
       ${errorHandling}
-
-      -- load the volume widget code
-      -- volumecfg = volume_control({})
 
       beautiful.notification_icon_size = 100
 
@@ -298,8 +296,7 @@ in {
                   layout = wibox.layout.fixed.horizontal,
                   mykeyboardlayout,
                   wibox.widget.systray(),
-                  -- require("battery-widget") {},
-                  -- volumecfg.widget,
+                  ${lib.optionalString config.profiles.laptop.enable "${battery-widget},"}
                   mytextclock,
                   s.mylayoutbox,
                },
