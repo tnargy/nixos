@@ -29,7 +29,6 @@ in {
   environment.pathsToLink = [ "/libexec" ];
   environment.systemPackages = with pkgs; [
     cachix
-    dmenu
     git
     git-crypt
     gnupg
