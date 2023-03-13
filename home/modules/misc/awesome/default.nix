@@ -152,7 +152,6 @@ in {
       -- {{{ Menu
       -- Create a launcher widget and a main menu
       myawesomemenu = {
-         { "launcher", '${cfg.launcher}' },
          { "hotkeys", function() return false, hotkeys_popup.show_help end},
          { "manual", terminal .. " -e man awesome" },
          { "edit config", editor_cmd .. " " .. awesome.conffile },
@@ -391,7 +390,6 @@ in {
          awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
             {description = "run prompt", group = "launcher"}),
 
-         awful.key({ modkey },            "d", function () awful.util.spawn('${cfg.launcher}') end),
          awful.key({ modkey },            "y", function () awful.util.spawn('${pkgs.i3lock}/bin/i3lock') end),
 
          awful.key({ modkey }, "x",
