@@ -7,7 +7,6 @@
   nodePkgs = upkgs.callPackages ./nodePackages/override.nix {};
 in {
   "advcp" = upkgs.callPackage ./advcp {};
-  "rofi/unicode" = upkgs.callPackage ./rofi-unicode {};
 
   "google-chrome" =
     (import inputs.master {

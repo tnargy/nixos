@@ -6,10 +6,6 @@
 }: let
   cfg = config.xsession.windowManager.awesome;
 
-  rofi = pkgs.rofi.override {
-    plugins = [pkgs.rofi-emoji];
-  };
-
   self' = self.packages.x86_64-linux;
 
   battery-widget = "require(\"battery-widget\") {ac_prefix=\"🔌\", battery_prefix=\"🔋\"}";
@@ -79,11 +75,6 @@ in {
     chrome  = lib.mkOption {
       type = lib.types.str;
       default = "${pkgs.google-chrome}/bin/google-chrome-stable";
-    };
-
-    launcher = lib.mkOption {
-      type = lib.types.str;
-      default = "${rofi}/bin/rofi -modi drun#run#window#ssh#emoji#unicode:${self'."rofi/unicode"}/bin/rofiunicode.sh -show drun -show-icons";
     };
 
     autostart = lib.mkOption {
