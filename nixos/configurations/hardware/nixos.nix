@@ -29,7 +29,8 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   # networking.useDHCP = lib.mkDefault true;
   networking.interfaces.enp0s3.ipv4.addresses = [ {
-	addres = "10.0.2.38";
+	address = "10.0.2.38";
+	prefixLength = 24;
   } ];
   networking.defaultGateway = "10.0.2.1";
 
