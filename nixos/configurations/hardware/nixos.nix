@@ -12,12 +12,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4f824e30-aaf4-4795-ade2-b9cf218ef732";
+    { device = "/dev/sda2";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F996-BBD8";
+    { device = "/dev/sda1";
       fsType = "vfat";
     };
 
@@ -27,8 +27,11 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s3.useDHCP = lib.mkDefault true;
+  # networking.useDHCP = lib.mkDefault true;
+  networking.interfaces.enp0s3.ipv4.addresses = [ {
+	addres = "10.0.2.38";
+  } ];
+  networking.defaultGateway = "10.0.2.1";
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
