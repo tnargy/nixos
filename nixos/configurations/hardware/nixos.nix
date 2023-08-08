@@ -33,6 +33,7 @@
 	prefixLength = 24;
   } ];
   networking.defaultGateway = "10.0.2.1";
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
