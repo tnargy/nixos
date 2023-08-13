@@ -25,8 +25,6 @@ in {
       advancedCopy.enable = true;
       alacritty.enable = true;
       bat.enable = true;
-      direnv.enable = true;
-      direnv.nix-direnv.enable = true;
       exa.enable = true;
       home-manager.enable = true;
       htop.enable = true;
@@ -66,6 +64,7 @@ in {
         '';
       };
     };
+
     services = {
       gpg-agent = {
         enable = true;
