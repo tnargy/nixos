@@ -29,10 +29,12 @@ in {
   environment.pathsToLink = [ "/libexec" ];
   environment.systemPackages = with pkgs; [
     cachix
+    direnv
     git
     git-crypt
     gnupg
     picom
+    st
     tmux
     vim
     wget

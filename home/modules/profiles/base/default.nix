@@ -25,7 +25,7 @@ in {
       advancedCopy.enable = true;
       alacritty.enable = true;
       bat.enable = true;
-      exa.enable = true;
+      eza.enable = true;
       home-manager.enable = true;
       htop.enable = true;
       jq.enable = true;
