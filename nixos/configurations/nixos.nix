@@ -30,6 +30,7 @@ in {
   environment.systemPackages = with pkgs; [
     cachix
     direnv
+    gcc
     git
     git-crypt
     gnupg
