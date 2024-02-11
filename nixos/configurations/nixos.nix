@@ -34,6 +34,7 @@ in {
     git
     git-crypt
     gnupg
+    home-manager
     picom
     st
     tmux

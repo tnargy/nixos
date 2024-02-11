@@ -4,15 +4,15 @@
   ...
 }: {pkgs, ...}: {
   config = {
-    nixpkgs.allowedUnfree = ["google-chrome"];
+    nixpkgs.allowedUnfree = ["discord" "google-chrome" "spotify"];
 
-    activeProfiles = ["browsing"];
+    activeProfiles = ["browsing" "laptop"];
 
     dconf.enable = true;
 
     programs.alacritty = {
       settings = {
-        font.size = 12;
+        font.size = 8;
         colors = {
           primary = {
             background = "0x282828";

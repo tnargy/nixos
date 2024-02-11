@@ -26,7 +26,6 @@ in {
       alacritty.enable = true;
       bat.enable = true;
       eza.enable = true;
-      home-manager.enable = true;
       htop.enable = true;
       jq.enable = true;
       neovim.enable = true;
