@@ -16,7 +16,7 @@ in {
   config = lib.mkIf config.nix.flakes.enable {
     nix = {
       package = lib.mkDefault nix.packages.x86_64-linux.nix; # pkgs.nixUnstable;
-      settings.experimental-features = "nix-command flakes";
+      settings.experimental-features = "nix-command flakes auto-allocate-uids configurable-impure-env";
 
       registry.nixpkgs.flake = nixpkgs;
 

@@ -5,6 +5,12 @@
   ...
 }: let
   cfg = config.profiles.base;
+  nvimEditor = pkgs.fetchFromGitHub {
+  	owner = "tnargy";
+	repo = "nvimEditor";
+	rev = "ad07980783ccef117eba4dc9682baff1220d4ea3";
+	sha256 = "sha256-g7jTyFvtzufsPqTe1Twstz0FStky61Ko6bE5GuwmuRo=";
+  };
 
   inherit (lib.hm) dag;
 
@@ -30,6 +36,7 @@ in {
       jq.enable = true;
       neovim.enable = true;
       starship.enable = true;
+      zoxide.enable = true;
 
 
       gpg = {
@@ -62,6 +69,11 @@ in {
           bind r source-file ~/.config/tmux/tmux.conf
         '';
       };
+    };
+
+    #NeoVim
+    home.file = {
+	".config/nvim".source = "${nvimEditor}";
     };
 
     services = {
