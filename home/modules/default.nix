@@ -4,7 +4,6 @@ inputs: {
   "profiles/browsing" = import ./profiles/browsing inputs;
   "profiles/laptop" = import ./profiles/laptop inputs;
 
-  "programs/advcp" = import ./programs/advcp inputs;
   "programs/nixpkgs" = import ./programs/nixpkgs inputs;
 
   "misc/awesome" = import ./misc/awesome inputs;

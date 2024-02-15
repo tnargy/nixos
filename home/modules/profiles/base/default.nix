@@ -28,7 +28,6 @@ in {
     };
 
     programs = {
-      advancedCopy.enable = true;
       alacritty.enable = true;
       bat.enable = true;
       eza.enable = true;

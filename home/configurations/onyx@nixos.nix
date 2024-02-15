@@ -4,7 +4,7 @@
   ...
 }: {pkgs, ...}: {
   config = {
-    nixpkgs.allowedUnfree = ["discord" "google-chrome" "spotify"];
+    nixpkgs.allowedUnfree = ["discord" "spotify"];
 
     activeProfiles = ["browsing" "laptop"];
 
