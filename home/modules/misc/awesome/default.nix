@@ -103,6 +103,7 @@ in {
       local theme_path = gears.filesystem.get_themes_dir() .. "default/theme.lua"
       local terminal   = "${cfg.terminalEmulator}" -- sets the default terminal
       local editor     = os.getenv("EDITOR") or "nvim" -- sets the default editor
+      local browser    = "floorp"
       local editor_cmd = terminal .. " -e " .. editor -- sets the default command that is used to start the editor
 
       beautiful.init(theme_path)
@@ -158,6 +159,7 @@ in {
             items = {
                { "awesome", myawesomemenu, beautiful.awesome_icon },
                { "open terminal", terminal },
+               { "open browser", browser },
             }
       })
 
@@ -344,6 +346,8 @@ in {
          -- Standard program
          awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
             {description = "open a terminal", group = "launcher"}),
+         awful.key({ modkey,           }, "b", function () awful.spawn(browser) end,
+            {description = "open a browser", group = "launcher"}),
          awful.key({ modkey, "Control" }, "r", awesome.restart,
             {description = "reload awesome", group = "awesome"}),
          awful.key({ modkey, "Shift"   }, "q", awesome.quit,
