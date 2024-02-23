@@ -9,7 +9,7 @@
   	owner = "tnargy";
 	repo = "nvimEditor";
 	rev = "ad07980783ccef117eba4dc9682baff1220d4ea3";
-	sha256 = "sha256-g7jTyFvtzufsPqTe1Twstz0FStky61Ko6bE5GuwmuRo=";
+	sha256 = "sha256-x8xZfu6uELQJsOkM11F0kj80QZZw7jbpgV+D4a59M4Q=";
   };
 
   inherit (lib.hm) dag;
